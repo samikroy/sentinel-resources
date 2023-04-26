@@ -22,7 +22,7 @@ fetch('https://api.github.com/repos/Azure/Azure-Sentinel/git/trees/master?recurs
   };
 
 function callSentinelFolders() {
-fetch('https://api.github.com/repos/Azure/Azure-Sentinel/git/trees', {
+fetch('https://api.github.com/repos/Azure/Azure-Sentinel/git/trees/master', {
   headers: new Headers({
     'User-agent': 'Mozilla/4.0 Custom User Agent'
   })
