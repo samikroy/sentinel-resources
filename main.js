@@ -11,7 +11,7 @@ fetch('https://api.github.com/repos/Azure/Azure-Sentinel/git/trees/master?recurs
   data.tree.forEach( folder => {
   console.log(folder.path); 
      output += `
-        <a class="navbar-brand" href="#">Navbar
+        <a class="navbar-brand" href="#">
           ${folder.path}
         </a>
       `;
@@ -30,13 +30,11 @@ fetch('https://api.github.com/repos/Azure/Azure-Sentinel/git/trees/master', {
 .then(response => response.json())
 .then(data => {
   console.log(data);
-   let output = '<h2 class="mb-4">Folders</h2>';
+   let output = '';
   data.tree.forEach( folder => {
   console.log(folder.path); 
      output += `
-        <ul class="list-group mb-3">
-          <li class="list-group-item">Name: ${folder.path}</li>
-        </ul>
+        <a class="navbar-brand" href="#">${folder.path}</a>
       `;
   });
    document.getElementById('output').innerHTML = output;
